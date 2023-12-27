@@ -62,7 +62,7 @@ La construcción de software en C++, se produce a través de un proceso en el cu
     Para producir el código objeto:
 
       ```bash
-        foo@bar~$ g++ -c file.cc -o file.o
+        foo@bar:~$ g++ -c file.cc -o file.o
       ```
 
  * ***Linkeado***: Se combinan todos los ficheros objeto (*.o) en un único fichero ejecutable. En este proceso se comprueba que todas las funciones estén correctamente implementadas.
