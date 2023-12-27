@@ -32,7 +32,7 @@ Una dirección IP es un identificador único de cada dispositivo conectado a una
 La construcción de software en C++, se produce a través de un proceso en el cual se traduce el código (escrito en un lenguaje legible para el ser humano) a código-máquina (binario) de manera que se produzca un archivo ejecutable por el dispositivo. Este proceso consta de cuatro fases:
  * ***Preprocesado***: Se interpretan las llamadas directivas iniciadas por *#* (include, define, ifndef, pragma, ...); se sustituyen por el código correspondiente constenido en las librerías en el caso de *#include*. Se puede llamar al preprocesador de la siguinete manera:
 
-      ```console
+      ```bash
         foo@bar:~$ cpp file.cc
       ```
 
