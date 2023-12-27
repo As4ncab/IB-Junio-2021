@@ -32,12 +32,13 @@ Una dirección IP es un identificador único de cada dispositivo conectado a una
 La construcción de software en C++, se produce a través de un proceso en el cual se traduce el código (escrito en un lenguaje legible para el ser humano) a código-máquina (binario) de manera que se produzca un archivo ejecutable por el dispositivo. Este proceso consta de cuatro fases:
  * ***Preprocesado***: Se interpretan las llamadas directivas iniciadas por *#* (include, define, ifndef, pragma, ...); se sustituyen por el código correspondiente constenido en las librerías en el caso de *#include*. Se puede llamar al preprocesador de la siguinete manera:
 
-      $ cpp file.cc
+        $ cpp file.cc
 
  * ***Compilado***: Se convierte el código en C++ (*.cc) a código en lenguaje Assembly o ensamblador (*.s); este proceso es local para cada fichero por separado. En Linux, se pueden emplear dos compiladores, *Clang* y *GCC* (**G**NU **C**ompiler **C**ollection); g++ se encuentra dentro de éste último.
+
     El comando *g++* permite opciones de compilado y linkeado.
 
-      $ g++ \[opciones\] input_file
+        $ g++ \[opciones\] input_file
     
     Algunas opciones útiles de g++:
      * ***-o***: Proveer de un nombre al fichero de salida.
@@ -47,20 +48,22 @@ La construcción de software en C++, se produce a través de un proceso en el cu
      * ***-O3***: Optimizar el proceso al máximo.
 
  * ***Ensamblado***: Se convierte el código en ensamblador (*.s) a código binario u objeto (*.o); este proceso también es local para cada fichero.
+
     Para producir el código en ensamblador:
 
-      $ g++ -m64 -masm=intel -S file.cc -o file.s
+        $ g++ -m64 -masm=intel -S file.cc -o file.s
 
     Para producir el código objeto:
 
-      $ g++ -c file.cc -o file.o
+        $ g++ -c file.cc -o file.o
 
  * ***Linkeado***: Se combinan todos los ficheros objeto (*.o) en un único fichero ejecutable. En este proceso se comprueba que todas las funciones estén correctamente implementadas.
+
     Para producir el ejecutable:
 
-      $ g++ -o program file.o
-               o
-      $ g++ -o program file.cc
+        $ g++ -o program file.o
+                 o
+        $ g++ -o program file.cc
 
 ![Compilation process image](compile.png "Compilation Process")
 
