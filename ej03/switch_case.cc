@@ -58,16 +58,18 @@ bool CheckCorrectParameters(const int argc, char* argv[],
 
 /**
  * @brief Función que intercambia mayúsculas por minúsculas
- * 
- * @param word 
- * @return std::string 
+ *
+ * @param word
+ * @return std::string
  */
 std::string SwitchCase(const std::string& word) {
   std::string new_word{""};
   for (auto& character : word) {
     if (isalpha(character)) {
-      if (isupper(character)) new_word += tolower(character);
-      else new_word += toupper(character);
+      if (isupper(character))
+        new_word += tolower(character);
+      else
+        new_word += toupper(character);
     } else {
       new_word += character;
     }
@@ -79,7 +81,7 @@ int main(int argc, char* argv[]) {
   // Verificamos que hay la cantidad necesaria de parámetros; se imprime un
   // mensaje de error en caso contrario y termina el programa
   if (!CheckCorrectParameters(argc, argv, 2)) {
-    return 1;
+    exit(EXIT_SUCCESS);
   }
   PrintProgramPurpose();
   // Imprimimos el string con los cambios realizados
