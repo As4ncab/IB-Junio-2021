@@ -87,10 +87,9 @@ Una vez completadas estas cuatro fases, se puede ejecutar el programa directamen
 **Escriba un programa switch_case que modifique todas las letras de una cadena de forma que transforme todas las mayúsculas en minúsculas y viceversa. Los caracteres que no sean mayúsculas ni minúsculas no debieran verse modificados.**
 
   ```bash
-    $ ./switch_case Abecedario
+    foo@bar:~$ ./switch_case Abecedario
     aBECEDARIO
-
-    $ ./switch_case PyThon
+    foo@bar:~$ ./switch_case PyThon
     pYtHON
   ```
 
