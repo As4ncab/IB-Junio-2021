@@ -40,7 +40,9 @@ La construcción de software en C++, se produce a través de un proceso en el cu
 
     El comando *g++* permite opciones de compilado y linkeado.
 
-        $ g++ \[opciones\] input_file
+      ```bash
+        foo@bar:~$ g++ [opciones] input_file
+      ```
     
     Algunas opciones útiles de g++:
      * ***-o***: Proveer de un nombre al fichero de salida.
@@ -53,25 +55,32 @@ La construcción de software en C++, se produce a través de un proceso en el cu
 
     Para producir el código en ensamblador:
 
-        $ g++ -m64 -masm=intel -S file.cc -o file.s
+      ```bash
+        foo@bar:~$ g++ -m64 -masm=intel -S file.cc -o file.s
+      ```
 
     Para producir el código objeto:
 
-        $ g++ -c file.cc -o file.o
+      ```bash
+        foo@bar~$ g++ -c file.cc -o file.o
+      ```
 
  * ***Linkeado***: Se combinan todos los ficheros objeto (*.o) en un único fichero ejecutable. En este proceso se comprueba que todas las funciones estén correctamente implementadas.
 
     Para producir el ejecutable:
 
-        $ g++ -o program file.o
-                 o
-        $ g++ -o program file.cc
+      ```bash
+        foo@bar:~$ g++ -o program file.o
+        foo@bar:~$ g++ -o program file.cc
+      ```
 
 ![Compilation process image](compile.png "Compilation Process")
 
 Una vez completadas estas cuatro fases, se puede ejecutar el programa directamente de la siguiente manera:
 
-    $ ./program [argumentos necesarios]
+  ```bash
+    foo@bar:~$ ./program [argumentos necesarios]
+  ```
 
 ## Preguntas Prácticas
 ### Ejercicio 03 - 2pts
