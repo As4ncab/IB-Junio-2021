@@ -33,7 +33,7 @@ La construcción de software en C++, se produce a través de un proceso en el cu
  * ***Preprocesado***: Se interpretan las llamadas directivas iniciadas por *#* (include, define, ifndef, pragma, ...); se sustituyen por el código correspondiente constenido en las librerías en el caso de *#include*. Se puede llamar al preprocesador de la siguinete manera:
 
       ```bash
-        foo@bar:~$ cpp file.cc
+      foo@bar:~$ cpp file.cc
       ```
 
  * ***Compilado***: Se convierte el código en C++ (*.cc) a código en lenguaje Assembly o ensamblador (*.s); este proceso es local para cada fichero por separado. En Linux, se pueden emplear dos compiladores, *Clang* y *GCC* (**G**NU **C**ompiler **C**ollection); g++ se encuentra dentro de éste último.
@@ -41,7 +41,7 @@ La construcción de software en C++, se produce a través de un proceso en el cu
     El comando *g++* permite opciones de compilado y linkeado.
 
       ```bash
-        foo@bar:~$ g++ [opciones] input_file
+      foo@bar:~$ g++ [opciones] input_file
       ```
     
     Algunas opciones útiles de g++:
@@ -56,13 +56,13 @@ La construcción de software en C++, se produce a través de un proceso en el cu
     Para producir el código en ensamblador:
 
       ```bash
-        foo@bar:~$ g++ -m64 -masm=intel -S file.cc -o file.s
+      foo@bar:~$ g++ -m64 -masm=intel -S file.cc -o file.s
       ```
 
     Para producir el código objeto:
 
       ```bash
-        foo@bar:~$ g++ -c file.cc -o file.o
+      foo@bar:~$ g++ -c file.cc -o file.o
       ```
 
  * ***Linkeado***: Se combinan todos los ficheros objeto (*.o) en un único fichero ejecutable. En este proceso se comprueba que todas las funciones estén correctamente implementadas.
@@ -70,8 +70,8 @@ La construcción de software en C++, se produce a través de un proceso en el cu
     Para producir el ejecutable:
 
       ```bash
-        foo@bar:~$ g++ -o program file.o
-        foo@bar:~$ g++ -o program file.cc
+      foo@bar:~$ g++ -o program file.o
+      foo@bar:~$ g++ -o program file.cc
       ```
 
 ![Compilation process image](compile.png "Compilation Process")
@@ -79,7 +79,7 @@ La construcción de software en C++, se produce a través de un proceso en el cu
 Una vez completadas estas cuatro fases, se puede ejecutar el programa directamente de la siguiente manera:
 
   ```bash
-    foo@bar:~$ ./program [argumentos necesarios]
+  foo@bar:~$ ./program [argumentos necesarios]
   ```
 
 ## Preguntas Prácticas
@@ -87,13 +87,13 @@ Una vez completadas estas cuatro fases, se puede ejecutar el programa directamen
 **Escriba un programa switch_case que modifique todas las letras de una cadena de forma que transforme todas las mayúsculas en minúsculas y viceversa. Los caracteres que no sean mayúsculas ni minúsculas no debieran verse modificados.**
 
   ```bash
-    foo@bar:~$ ./switch_case Abecedario
-    aBECEDARIO
-    foo@bar:~$ ./switch_case PyThon
-    pYtHON
+  foo@bar:~$ ./switch_case Abecedario
+  aBECEDARIO
+  foo@bar:~$ ./switch_case PyThon
+  pYtHON
   ```
 
-***\*\*\*Los ficheros con el código fuente se encuentran añadidos al repositorio\*\*\****
+***\*\*\*Los ficheros con el código fuente se encuentran añadidos al repositorio y el correo en los comentarios de cabecera es inventado (no intente contactarme a través de él)\*\*\****
 
 Este programa se puede organizar de dos maneras:
 1. En un único fichero:
@@ -196,26 +196,21 @@ Este programa se puede organizar de dos maneras:
   
 2. En varios ficheros separando el programa cliente de la declaración de funciones:
 
-    ***switch_case.h***
+    ***switch-case.h***
     ```c++
     /**
      * Universidad de La Laguna
      * Escuela Superior de Ingeniería y Tecnología
-     * Grado en Ingeniería Informática
-     * Informática Básica
+     * Grado de Ingeniería Informática
+     * Informática Básica 2020-2021
      *
-     * @file switch_case.h
-     * @author Alexia Sánchez Cabrera  (alu0101482323@ull.edu.es)
+     * @file point-2d.h
+     * @author S4yuM4ng0    (s4yum4ng0@random.com)
      * @date Jun 24 2021
      *
-     * @brief Escriba un programa switch_case que modifique todas las letras de una
-     *        cadena de forma que transforme todas las mayúsculas en minúsculas y
-     *        viceversa.
-     *        Los caracteres que no sean mayúsculas ni minúsculas no debieran verse
-     *        modificados.
+     * @brief Library with information functions declarations
      *
-     * @bug No se ha detectado bugs
-     *
+     * @bug There are no known bugs
      */
 
     #ifndef SWITCH_CASE_H
@@ -225,7 +220,113 @@ Este programa se puede organizar de dos maneras:
     #include <iostream>
     #include <string>
 
+    ///< Function declarations
+    std::string SwitchCase(const std::string&);
+
     #endif
+    ```
+
+    ***switch-case.cc***
+    ```c++
+    /**
+     * Universidad de La Laguna
+     * Escuela Superior de Ingeniería y Tecnología
+     * Grado de Ingeniería Informática
+     * Informática Básica 2020-2021
+     *
+     * @file switch-case.cc
+     * @author S4yuM4ng0    (s4yum4ng0@random.com)
+     * @date Jun 24 2021
+     *
+     * @brief Library with information functions definitions
+     *
+     * @bug There are no known bugs
+     */
+
+    #include "switch-case.h"
+
+    ///< Function implementations
+    /**
+     * @brief Function that switches the case of the letters on a string
+     *
+     * @param text
+     * @return std::string
+     */
+    std::string SwitchCase(const std::string& text) {
+      std::string changed_text{""};
+      for (auto& character : text) {
+        if (isalpha(character)) {
+          if (isupper(character))
+            changed_text += tolower(character);
+          else
+            changed_text += toupper(character);
+        } else {
+          changed_text += character;
+        }
+      }
+      return changed_text;
+    }
+    ```
+
+    ***switch-case_main.cc***
+    ```c++
+    /**
+     * Universidad de La Laguna
+     * Escuela Superior de Ingeniería y Tecnología
+     * Grado de Ingeniería Informática
+     * Informática Básica 2020-2021
+     *
+     * @file switch-case_main.cc
+     * @author S4yuM4ng0    (s4yum4ng0@random.com)
+     * @date Jun 24 2021
+     *
+     * @brief Given a string, the program switches the case of its letters; non
+     *        alphabetical characters remain unchanged.
+     *
+     * @bug There are no known bugs
+     */
+
+    #include "switch-case.h"
+    #include "tools.h"
+
+    ///< Client program
+    int main(int argc, char* argv[]) {
+      ///< Verification of suficient amount of parameters in program call
+      if (!CheckCorrectParameters(argc, argv, 2)) exit(EXIT_SUCCESS);
+      PrintProgramPurpose();
+      ///< Print the string with its case switched
+      std::cout << SwitchCase(argv[1]) << std::endl;
+      return 0;
+    }
+    ```
+
+    Esta opción se puede compilar empleando un fichero CMakeLists.txt debido a que se emplean varios ficheros en el proceso de producción del ejecutable. Se deben seguir las siguientes instrucciones:
+    ```bash
+    foo@bar:~/project-dir$ mkdir build
+    foo@bar:~/project-dir$ cd build/
+    foo@bar:~/project-dir/build$ cmake ..
+    -- The CXX compiler identification is GNU 9.4.0
+    -- Check for working CXX compiler: /usr/bin/c++
+    -- Check for working CXX compiler: /usr/bin/c++ -- works
+    -- Detecting CXX compiler ABI info
+    -- Detecting CXX compiler ABI info - done
+    -- Detecting CXX compile features
+    -- Detecting CXX compile features - done
+    -- Configuring done
+    -- Generating done
+    -- Build files have been written to: /home/foo/project-dir/build
+    foo@bar:~/project-dir/build$ make
+    Scanning dependencies of target main
+    [ 25%] Building CXX object CMakeFiles/main.dir/src/file1.cc.o
+    [ 50%] Building CXX object CMakeFiles/main.dir/src/file2.cc.o
+    [ 75%] Building CXX object CMakeFiles/main.dir/src/file_main.cc.o
+    [100%] Linking CXX executable main
+    [100%] Built target main
+    ```
+
+    Si se quisiera eliminar los ficheros generados por CMake, bastaría con eliminar el directorio build/ y todos sus subdirectorios:
+    ```bash
+    foo@bar:~/project-dir$ rm -rf build/
     ```
 
 ### Ejercicio 04 - 2pts
