@@ -5,7 +5,7 @@
  * Informática Básica 2020-2021
  *
  * @file switch-case.cc
- * @author S4yuM4ng0    (s4yum4ng0@random.art.com)
+ * @author S4yuM4ng0    (s4yum4ng0@random.com)
  * @date Jun 24 2021
  *
  * @brief Library with information functions definitions

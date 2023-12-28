@@ -4,8 +4,8 @@
  * Grado de Ingeniería Informática
  * Informática Básica 2020-2021
  *
- * @file point-2d.h
- * @author S4yuM4ng0    (s4yum4ng0@random.art.com)
+ * @file switch-case.h
+ * @author S4yuM4ng0    (s4yum4ng0@random.com)
  * @date Jun 24 2021
  *
  * @brief Library with information functions declarations
