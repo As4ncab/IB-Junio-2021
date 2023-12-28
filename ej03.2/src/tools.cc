@@ -5,7 +5,7 @@
  * Informática Básica 2020-2021
  *
  * @file tools.cc
- * @author Alexia Sánchez Cabrera    alu0101482323@ull.edu.es
+ * @author S4yuM4ng0    (s4yum4ng0@random.art.com)
  * @date Jun 24 2021
  *
  * @brief Library with information functions definitions
