@@ -29,8 +29,10 @@ void PrintProgramPurpose(void) { std::cout << kHelpText << std::endl; }
  * @param argv
  */
 void Usage(char** argv) {
-  std::cout << argv[0] << " -- String computing program\nUsage: " << argv[0]
-            << " [STRING]\n  STRING: String to switch the case of its letters"
+  std::cout << argv[0] << " -- Box computing program\nUsage: " << argv[0]
+            << " [LENGTH] [BREADTH] [HEIGHT]\n  LENGHT: Lenght value of the "
+               "box (double)\n  BREADTH: Breadth value of the box (double)\n  "
+               "HEIGHT: Height value of the box (double)"
             << std::endl;
 }
 
@@ -51,9 +53,9 @@ bool CheckCorrectParameters(const int argc, char** argv,
     return 0;
   }
   if (argc != kCorrectParameters) {
-    std::cout << argv[0] << " -- String computing program\nUsage: " << argv[0]
-              << " [STRING]\nTry " << argv[0] << " --help for more information"
-              << std::endl;
+    std::cout << argv[0] << " -- Box computing program\nUsage: " << argv[0]
+              << " [LENGTH] [BREADTH] [HEIGHT]\nTry " << argv[0]
+              << " --help for more information" << std::endl;
     return 0;
   }
   return 1;
