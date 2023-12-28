@@ -6,7 +6,7 @@
  *
  * @file tools.cc
  * @author Alexia Sánchez Cabrera    alu0101482323@ull.edu.es
- * @date Nov 28 2023
+ * @date Jun 24 2021
  *
  * @brief Library with information functions definitions
  *

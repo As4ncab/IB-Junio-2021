@@ -2,7 +2,7 @@
  * Universidad de La Laguna
  * Escuela Superior de Ingeniería y Tecnología
  * Grado de Ingeniería Informática
- * Informática Básica 2023-2024
+ * Informática Básica 2020-2021
  *
  * @file tools.h
  * @author Alexia Sánchez Cabrera    alu0101482323@ull.edu.es
