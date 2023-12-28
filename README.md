@@ -246,6 +246,7 @@ Este programa se puede organizar de dos maneras:
     #include "switch-case.h"
 
     ///< Function implementations
+    
     /**
      * @brief Function that switches the case of the letters on a string
      *
