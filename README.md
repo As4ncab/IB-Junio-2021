@@ -375,6 +375,9 @@ Este programa se puede organizar de dos maneras:
     };
   ```
 
+Para resolver este ejercico, sería conveniente organizarlo de la misma manera que en la segunda opción del ejercicio anterior, es decir, dividir el código en varios ficheros:
+***
+
 ## Preguntas Tipo Test
 ### Ejercicio 05 - 2pts
 **Responda Verdadero (V) o Falso (F) o elegir la/s respuesta/s correcta/s para cada una de las siguientes preguntas teniendo en cuenta las siguientes observaciones:**
