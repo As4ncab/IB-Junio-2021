@@ -15,7 +15,7 @@
 
 #include "tools.h"
 
-// Info/Error functions
+///< Info/Error functions
 /**
  * @brief Function that prints the purpose of the program
  *
