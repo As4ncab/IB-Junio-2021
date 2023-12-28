@@ -16,7 +16,7 @@ LDFLAGS =						         # The linker options (if any)
 all: switch-case 
 
 # The switch-case target builds the switch-case executable.
-switch-case: switch-case.o switch-case-main.o
+switch-case: switch-case.o
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 # Indicate that the all and clean targets do not
