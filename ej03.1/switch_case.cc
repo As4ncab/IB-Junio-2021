@@ -1,18 +1,20 @@
 /**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Informática Básica
+ *
  * @file switch_case.cc
- * @author Alexia Sánchez Cabrera (alu0101482323@ull.edu.es)
+ * @author Alexia Sánchez Cabrera  (alu0101482323@ull.edu.es)
+ * @date Jun 24 2021
  *
  * @brief Escriba un programa switch_case que modifique todas las letras de una
  *        cadena de forma que transforme todas las mayúsculas en minúsculas y
  *        viceversa.
- *
  *        Los caracteres que no sean mayúsculas ni minúsculas no debieran verse
- *        modificados. (2 pts)
+ *        modificados.
  *
- * @version 0.1
- * @date 2023-06-08
- *
- * @copyright Copyright (c) 2023
+ * @bug No se ha detectado bugs
  *
  */
 
