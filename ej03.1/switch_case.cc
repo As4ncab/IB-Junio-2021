@@ -5,14 +5,11 @@
  * Informática Básica
  *
  * @file switch_case.cc
- * @author Alexia Sánchez Cabrera  (alu0101482323@ull.edu.es)
+ * @author S4yuM4ng0    (s4yum4ng0@random.com)
  * @date Jun 24 2021
  *
- * @brief Escriba un programa switch_case que modifique todas las letras de una
- *        cadena de forma que transforme todas las mayúsculas en minúsculas y
- *        viceversa.
- *        Los caracteres que no sean mayúsculas ni minúsculas no debieran verse
- *        modificados.
+ * @brief Given a string, the program switches the case of its letters; non
+ *        alphabetical characters remain unchanged.
  *
  * @bug No se ha detectado bugs
  *
@@ -22,71 +19,86 @@
 #include <iostream>
 #include <string>
 
-const std::string kErrorText{"Too few/many parameters in execution process.\n"};
+///< Constant variables
+const std::string kHelpText{
+    "Given a string, the program switches the case of its letters; non "
+    "alphabetical characters remain unchanged.\n"};
+
+///< Function declarations
+///< Info/Error functions
 
 /**
- * @brief Función que imprime el propósito del programa
+ * @brief Function that prints the purpose of the program
  *
  */
-void PrintProgramPurpose() {
-  std::cout
-      << "This program switches the case of all the letters of a string given "
-         "by command line parameters; it ONLY changes the letters.\n"
-      << std::endl;
-}
+void PrintProgramPurpose(void) { std::cout << kHelpText << std::endl; }
 
 /**
- * @brief Función que comprueba que se haya pasado el número necesario de
- *        parámetros por línea de comandos para la ejecución del programa
+ * @brief Function that prints they correct way of using the program
  *
  * @param argc
  * @param argv
- * @param kCorrectParameterNumber
- * @return true
- * @return false
  */
-bool CheckCorrectParameters(const int argc, char* argv[],
-                            const int kCorrectParameterNumber) {
-  if (argc != kCorrectParameterNumber) {
-    std::cout << kErrorText << std::endl;
-    std::cout << "Try calling the program this way: \n    " << argv[0]
-              << " [STRING]" << std::endl;
-
-    return 0;
-  }
-
-  return 1;
+void Usage(char** argv) {
+  std::cout << argv[0] << " -- String computing program\nUsage: " << argv[0]
+            << " [STRING]\n  STRING: String to switch the case of its letters"
+            << std::endl;
 }
 
 /**
- * @brief Función que intercambia mayúsculas por minúsculas
+ * @brief Function that checks if the program receives a correct amount of
+ *        parameters
  *
- * @param word
- * @return std::string
+ * @param argc
+ * @param argv
+ * @param kCorrectParameters
+ * @return true
+ * @return false
  */
-std::string SwitchCase(const std::string& word) {
-  std::string new_word{""};
-  for (auto& character : word) {
-    if (isalpha(character)) {
-      if (isupper(character))
-        new_word += tolower(character);
-      else
-        new_word += toupper(character);
-    } else {
-      new_word += character;
-    }
+bool CheckCorrectParameters(const int argc, char** argv,
+                            const int kCorrectParameters) {
+  if (argc > 1 && std::string(argv[1]) == "--help") {
+    Usage(argv);
+    return 0;
   }
-  return new_word;
+  if (argc != kCorrectParameters) {
+    std::cout << argv[0] << " -- String computing program\nUsage: " << argv[0]
+              << " [STRING]\nTry " << argv[0] << " --help for more information"
+              << std::endl;
+    return 0;
+  }
+  return 1;
 }
 
-int main(int argc, char* argv[]) {
-  // Verificamos que hay la cantidad necesaria de parámetros; se imprime un
-  // mensaje de error en caso contrario y termina el programa
-  if (!CheckCorrectParameters(argc, argv, 2)) {
-    exit(EXIT_SUCCESS);
+///< Program functions
+
+/**
+ * @brief Function that switches the case of the letters on a string
+ *
+ * @param text
+ * @return std::string
+ */
+std::string SwitchCase(const std::string& text) {
+  std::string changed_text{""};
+  for (auto& character : text) {
+    if (isalpha(character)) {
+      if (isupper(character))
+        changed_text += tolower(character);
+      else
+        changed_text += toupper(character);
+    } else {
+      changed_text += character;
+    }
   }
+  return changed_text;
+}
+
+///< Client program
+int main(int argc, char* argv[]) {
+  ///< Verification of suficient amount of parameters in program call
+  if (!CheckCorrectParameters(argc, argv, 2)) exit(EXIT_SUCCESS);
   PrintProgramPurpose();
-  // Imprimimos el string con los cambios realizados
+  ///< Print the string with its case switched
   std::cout << SwitchCase(argv[1]) << std::endl;
   return 0;
 }
