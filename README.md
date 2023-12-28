@@ -205,6 +205,23 @@ Este programa se puede organizar de dos maneras:
       return 0;
     }
     ```
+
+    Se puede automatizar la compilación del programa empleando un fichero Makefile de la siguiente manera:
+    ```bash
+    foo@bar:~/project-dir$ make
+    g++ -std=c++17 -Wall -c -o switch-case.o switch-case.cc
+    g++ -std=c++17 -Wall -o switch-case switch-case.o
+    ```
+
+    Para eliminar los archivos producidos por Make, basta con llamar a la etiqueta *clean* del makefile:
+    ```bash
+    foo@bar:~/project-dir$ make clean
+    rm -f switch-case *.o
+    rm -rf *~ basura* b i
+    rm -rf a.out
+    find . -name '*~' -exec rm {} \;
+    find . -name basura -exec rm {} \;
+    ```
   
 2. En varios ficheros separando el programa cliente de la declaración de funciones:
 
