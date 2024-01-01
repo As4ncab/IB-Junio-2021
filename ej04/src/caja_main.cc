@@ -1,54 +1,56 @@
 /**
- * @file caja_main.cc
- * @author Alexia Sánchez Cabrera (alu0101482323@ull.edu.es)
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado de Ingeniería Informática
+ * Informática Básica 2020-2021
  *
- * @brief Finalmente, implemente una función principal donde se empleen los
- *        operadores sobrecargados. (2 pts)
+ * @file switch-case_main.cc
+ * @author S4yuM4ng0    (s4yum4ng0@random.com)
+ * @date Jun 24 2021
  *
- * @version 0.1
- * @date 2023-06-09
+ * @brief Given the dimensions of a box, the program instantiates a "Caja"
+ *        object and computes it.
  *
- * @copyright Copyright (c) 2023
- *
+ * @bug There are no known bugs
  */
 
 #include "caja.h"
+#include "tools.h"
 
-int main() {
-  // Valores iniciales de los constructores
-  Box caja_1;
+///< Client program
+int main(int argc, char* argv[]) {
+  ///< Verification of suficient amount of parameters in program call
+  if (!CheckCorrectParameters(argc, argv, 4)) exit(EXIT_SUCCESS);
+  ///< Initial values
+  Box caja_1{std::stod(argv[1]), std::stod(argv[2]), std::stod(argv[3])};
   Box caja_2{1.1, 2.2, 3.3};
   Box caja_3;
-
   PrintProgramPurpose();
-
-  std::cout << "Box 1: \n" << caja_1 << std::endl;
-  std::cout << "Box 2: \n" << caja_2 << std::endl;
-  std::cout << "Box 3: \n" << caja_3 << std::endl;
-
-  // Valores con cambios empleando setters
-  caja_1.SetLength(caja_2.length());
-  caja_1.SetBreadth(caja_2.breadth());
-  caja_1.SetHeight(caja_2.height());
-
-  std::cout << "\nBox 1: \n" << caja_1 << std::endl;
-  std::cout << "Box 2: \n" << caja_2 << std::endl;
-  std::cout << "Box 3: \n" << caja_3 << std::endl;
-
-  // Valores con valores introducidos por el usuario
-  std::cout << "\nInroduce the dimensions of the third box (length -> breadth -> "
-               "height): ";
+  std::cout << "Box 1:\n"
+            << caja_1 << "\nBox 2:\n"
+            << caja_2 << "\nBox 3:\n"
+            << caja_3 << std::endl;
+  ///< Values introduced by the user
+  std::cout
+      << "\nInroduce the dimensions of the third box (length -> breadth -> "
+         "height): ";
   std::cin >> caja_3;
-
-  std::cout << "\nBox 1: \n" << caja_1 << std::endl;
-  std::cout << "Box 2: \n" << caja_2 << std::endl;
-  std::cout << "Box 3: \n" << caja_3 << std::endl;
-
-  // Comparación con operador ==
-  std::cout << "\nBox 1 = Box 2?" << std::endl;
-  AreEqual(caja_1, caja_2);
+  std::cout << "Updated values:\nBox 1:\n"
+            << caja_1 << "\nBox 2:\n"
+            << caja_2 << "\nBox 3:\n"
+            << caja_3 << std::endl;
+  ///< Compairisons
+  std::cout << "Box 1 = Box 2?" << std::endl;
+  if (caja_1 == caja_2) {
+    std::cout << "Yes" << std::endl;
+  } else {
+    std::cout << "No" << std::endl;
+  }
   std::cout << "Box 1 = Box 3?" << std::endl;
-  AreEqual(caja_1, caja_3);
-
+  if (caja_1 == caja_3) {
+    std::cout << "Yes" << std::endl;
+  } else {
+    std::cout << "No" << std::endl;
+  }
   return 0;
 }
