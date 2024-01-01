@@ -361,22 +361,24 @@ Este programa se puede organizar de dos maneras:
 
 ### Ejercicio 04 - 2pts
 **A continuación encontrará la definición parcial de la clase Box en C++, que representa una caja a través de su largo, fondo y alto. Complete la clase con los constructores que considere oportunos y la sobrecarga de operadores ==, extracción a través *ostream* e inserción a través de istream. Finalmente, implemente una función principal donde se empleen los operadores sobrecargados.**
-
-  ```c++
-    class Box {
-     public:
-      int length() { return length_; }
-      int breadth() { return breadth_; }
-      int height() { return height_; }
-     private:
-      double length_;
-      double breadth_;
-      double height_;
-    };
-  ```
+```c++
+class Box {
+ public:
+  int length() { return length_; }
+  int breadth() { return breadth_; }
+  int height() { return height_; }
+ private:
+  double length_;
+  double breadth_;
+  double height_;
+};
+```
 
 Para resolver este ejercico, sería conveniente organizarlo de la misma manera que en la segunda opción del ejercicio anterior, es decir, dividir el código en varios ficheros:
-***
+***caja.h***
+```c++
+
+```
 
 ## Preguntas Tipo Test
 ### Ejercicio 05 - 2pts
