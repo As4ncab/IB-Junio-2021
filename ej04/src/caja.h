@@ -19,42 +19,32 @@
 #include <iomanip>
 #include <iostream>
 
-/**
- * @brief Declaración de la clase Box con atributos privados length (largo),
- *        breadth (ancho) y height (alto)
- *
- */
+///< Class declarations
 class Box {
  public:
-  // Constructor por defecto
-  Box() : length_{0.0}, breadth_{0.0}, height_{0.0} {}
-  // Constructor de copia
-  Box(const double, const double, const double);
-  // Destructor
+  ///< Constructors and Destructor
+  Box() {}
+  Box(const double&, const double&, const double&);
   ~Box() {}
-
-  // Getters
+  ///< Getters and Setters
   double length(void) const { return length_; }
   double breadth(void) const { return breadth_; }
   double height(void) const { return height_; }
-  // Setters
   void SetLength(const double&);
   void SetBreadth(const double&);
   void SetHeight(const double&);
-
-  // Sobrecarga de operadores de comparación
-  bool operator==(const Box& box);
+  ///< Operator overloadings
+  bool operator==(const Box&);
   friend std::ostream& operator<<(std::ostream&, Box&);
   friend std::istream& operator>>(std::istream&, Box&);
 
  private:
-  double length_;
-  double breadth_;
-  double height_;
+  double length_{0.0};
+  double breadth_{0.0};
+  double height_{0.0};
 };
 
-// Funciones
-void PrintProgramPurpose(void);
+///< Function declarations
 void AreEqual(Box&, Box&);
 
 #endif
