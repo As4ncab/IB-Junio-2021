@@ -1,16 +1,16 @@
 /**
- * @file caja.h
- * @author Alexia Sánchez Cabrera (alu0101482323@ull.edu.es)
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado de Ingeniería Informática
+ * Informática Básica 2020-2021
  *
- * @brief A continuación encontrará la definición parcial de la clase Box en
- *        C++, que representa una caja a través de su largo, fondo y alto.
- *        (2 pts)
+ * @file tools.h
+ * @author S4yuM4ng0    (s4yum4ng0@random.com)
+ * @date Jun 24 2021
  *
- * @version 0.1
- * @date 2023-06-09
+ * @brief Library with class and function declarations
  *
- * @copyright Copyright (c) 2023
- *
+ * @bug There are no known bugs
  */
 
 #ifndef CAJA_H
