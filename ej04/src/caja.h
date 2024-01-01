@@ -4,7 +4,7 @@
  * Grado de Ingeniería Informática
  * Informática Básica 2020-2021
  *
- * @file tools.h
+ * @file caja.h
  * @author S4yuM4ng0    (s4yum4ng0@random.com)
  * @date Jun 24 2021
  *
