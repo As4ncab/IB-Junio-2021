@@ -44,7 +44,4 @@ class Box {
   double height_{0.0};
 };
 
-///< Function declarations
-void AreEqual(Box&, Box&);
-
 #endif
