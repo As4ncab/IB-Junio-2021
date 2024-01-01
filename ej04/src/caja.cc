@@ -81,7 +81,6 @@ std::ostream& operator<<(std::ostream& os, Box& box) {
   os << "  Length:  " << std::fixed << std::setprecision(2) << box.length()
      << "\n  Breadth: " << std::fixed << std::setprecision(2) << box.breadth()
      << "\n  Height:  " << std::fixed << std::setprecision(2) << box.height();
-
   return os;
 }
 
@@ -95,6 +94,5 @@ std::ostream& operator<<(std::ostream& os, Box& box) {
  */
 std::istream& operator>>(std::istream& is, Box& box) {
   is >> box.length_ >> box.breadth_ >> box.height_;
-
   return is;
 }
