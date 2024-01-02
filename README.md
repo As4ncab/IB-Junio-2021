@@ -588,6 +588,35 @@ int main(int argc, char* argv[]) {
 }
 ```
 
+Se puede compilar empleando un fichero CMakeLists.txt debido a que se emplean varios ficheros en el proceso de producción del ejecutable. Se deben seguir las siguientes instrucciones:
+```bash
+foo@bar:~/project-dir$ mkdir build
+foo@bar:~/project-dir$ cd build/
+foo@bar:~/project-dir/build$ cmake ..
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/foo/project-dir/build
+foo@bar:~/project-dir/build$ make
+Scanning dependencies of target main
+[ 25%] Building CXX object CMakeFiles/main.dir/src/file1.cc.o
+[ 50%] Building CXX object CMakeFiles/main.dir/src/file2.cc.o
+[ 75%] Building CXX object CMakeFiles/main.dir/src/file_main.cc.o
+[100%] Linking CXX executable main
+[100%] Built target main
+```
+
+Si se quisiera eliminar los ficheros generados por CMake, bastaría con eliminar el directorio build/ y todos sus subdirectorios:
+```bash
+foo@bar:~/project-dir$ rm -rf build/
+```
+
 ## Preguntas Tipo Test
 ### Ejercicio 05 - 2pts
 **Responda Verdadero (V) o Falso (F) o elegir la/s respuesta/s correcta/s para cada una de las siguientes preguntas teniendo en cuenta las siguientes observaciones:**
