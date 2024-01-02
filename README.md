@@ -626,22 +626,31 @@ foo@bar:~/project-dir$ rm -rf build/
  * **La puntuación mínima de la pregunta es de 0 puntos.**
 
 1. **El Gestor de Red es un componente habitual en un Sistema Operativo.**
+  Verdadero
 
 2. **En la shell de Linux el directorio “home” del usuario se representa mediante el carácter /.**
+  Falso (/ corresponde con el directorio "root", el directorio "home" se representa mediante el carácter ~)
 
 3. **De acuerdo a la Guía de Estilo de código que se sigue en la asignatura, los identificadores de funciones ordinarias (no métodos de una clase) deben escribirse comenzando con letra minúscula y usando mayúscula para cada palabra.**
+  Verdadero (También llamado CamelCase)
 
 4. **En una relación de composición de objetos la parte (miembro) sólo puede pertenecer a un objeto (clase) a la vez.**
+  Verdadero
 
-5. **El método emplace_back()de la clase std::vector se utiliza para eliminar el último elemento de unvector.**
+5. **El método emplace_back() de la clase std::vector se utiliza para eliminar el último elemento de un vector.**
+  Falso (emplace_back() añade un elemento al final del vector)
 
 6. **Al leer caracteres desde un flujo de entrada (cin) la lectura se detiene cuando se detecta un espacio en blanco o bien un retorno de carro (enter).**
+  Verdadero
 
 7. **Una función declarada "friend" de una clase puede acceder para escritura los miembros de datos (atributos) de esa clase.**
+  Verdadero
 
 8. **Los operadores unarios debieran sobrecargarse usando métodos de la clase.**
+  Verdadero
 
 9. **El espacio de direcciones que permite IPv4 es mayor que el que utiliza IPv6.**
+  Falso (El espacio de direciones de IPv6 (128 bits) es mayor que el de IPv4 (32 bits))
 
 10. **El lenguaje SQL se utiliza para realizar operaciones CRUD en bases de datos no relacionales.**
-
+  Falso (SQL se emplea en bases de datos relacionales)
