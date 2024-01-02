@@ -626,6 +626,7 @@ foo@bar:~/project-dir$ rm -rf build/
  * **La puntuación mínima de la pregunta es de 0 puntos.**
 
 1. **El Gestor de Red es un componente habitual en un Sistema Operativo.**
+
     Verdadero
 
 2. **En la shell de Linux el directorio “home” del usuario se representa mediante el carácter /.**
